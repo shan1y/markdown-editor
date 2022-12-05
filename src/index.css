@@ -4,39 +4,47 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+
 body {
     font-family: "Roboto",sans-serif;
 }
 
 .preview {
     font-family:"Roboto Slab",serif;
+    background-color: white;
 }
 
 .preview h1{
     font-size:32px;
     line-height:42px;
-    @apply my-20
+    @apply dark:text-white
 }
 
 .preview h2{
      font-size: 28px;
     line-height: 37px;
-    @apply my-20
+    @apply dark:text-white
 }
 
 .preview h3{
     font-size:24px;
-    @apply font-bold
+    @apply font-bold dark:text-white
 }
 
 .preview h4 {
     font-size:20px;
-    @apply font-bold
+    @apply font-bold dark:text-white
 }
 
 .preview h5 {
     font-size:16px;
-    @apply font-bold my-20
+    @apply font-bold my-20 dark:text-white
 }
 
 .preview h6 {
@@ -50,43 +58,87 @@ body {
 
 
 .preview pre {
-@apply p-24
+    @apply p-24
 }
 .preview ul {
     @apply px-4 text-sm font-normal mb-5 ;
   }
 
   .preview ul li, .preview ol li{
-    @apply text-icon-grey
+    @apply text-icon-grey dark:text-grey-2
   }
 
 .preview ul li::before {
     content: "\2022";
-  @apply inline-block w-4 text-orange -ml-4 font-bold
+  @apply inline-block w-4 text-orange -ml-4 font-bold 
   }
   
 
 .preview p{
-    @apply block my-2 text-icon-grey
+    @apply block my-2 text-icon-grey dark:text-grey-2
 }
 
 .preview p code {
-    @apply  inline text-hamburger-bkg
+    @apply  inline text-hamburger-bkg dark:text-white
 }
 
 .preview pre {
-    @apply bg-grey-0;
+    @apply bg-grey-0 dark:bg-dark-blockquote
 }
 
 .preview pre code {
-    @apply text-xs
+    @apply text-xs  dark:text-white
 }
 
 .preview blockquote {
     border-left:4px solid #e46643;
-    @apply bg-grey-0 my-20 p-24
+    @apply bg-grey-0 my-20 p-24  dark:bg-dark-blockquote
 }
 
 .preview blockquote p {
-    @apply text-hamburger-bkg
+    @apply text-hamburger-bkg dark:text-white 
 }
+
+.open{
+    transform: translateX(0);
+    transition: all 1s; 
+    @apply h-screen min-w-['250px']
+}
+
+.close {
+    transform: translateX(-250px);
+    transition: all 1s;
+    @apply h-screen fixed
+}
+
+.open-right{
+    transform: translateX(250px);
+    transition:all 1s;
+    width:calc(100% - 250px);
+    @apply fixed 
+}
+
+.close-right {
+    transform:translateX(0);
+    transition:all 1s;
+   @apply w-full
+}
+
+.center-modal {
+    transform:translate(calc(-50% + 250px), -50%);
+    position:fixed;
+    z-index: 1000;
+    @apply top-1/2 right-1/2
+}
+
+.center-modal-delete {
+    transform:translate(50%, -50%);
+    position:fixed;
+    z-index: 1000;
+    @apply top-1/2 right-1/2
+}
+
+.overlay {
+    background-color: rgba(0,0,0,75%);
+    z-index: 99;
+    @apply fixed top-0 bottom-0 left-0 right-0 }
