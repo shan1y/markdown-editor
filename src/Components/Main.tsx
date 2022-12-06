@@ -54,7 +54,7 @@ function Main() {
     <>
       {showDeleteModal && <DeleteModal setShowDeleteModal={setShowDeleteModal} />}
       {showCreateModal && <CreateModal  setShowCreateModal={setShowCreateModal} />}
-      <div className='flex relative bg-dark-bkg'>
+      <div className='flex relative'>
         <Side setSelectedDoc={setSelectedDoc} sidebar={sidebar} setShowCreateModal={setShowCreateModal}/>
         <div className={sidebar ? 'open-right--main' : 'close-right--main'} >
           <PageHeader setShowDeleteModal={setShowDeleteModal} setSidebar={setSidebar} sidebar={sidebar} saveChanges={saveChanges} markdownTitle={markdownTitle}/>

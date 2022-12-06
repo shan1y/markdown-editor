@@ -20,7 +20,7 @@ function Side({sidebar, setShowCreateModal,setSelectedDoc}:Props) {
     const setDarkTheme = useThemeStore((state:any) => state.setDarkTheme);
 
 return(
-        <section className={sidebar ?' open bg-side-bkg p-27 flex flex-col justify-between' : ' bg-side-bkg close p-27 flex flex-col  justify-between'}>
+        <section className={sidebar ?' open bg-side-bkg p-28 flex flex-col justify-between' : ' bg-side-bkg close p-27 flex flex-col  justify-between'}>
             <div>
                 <p className='uppercase text-white'>Markdown</p>
                 <p className='uppercase text-icon-grey my-27 '>My Documents</p>
