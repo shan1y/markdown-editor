@@ -24,7 +24,7 @@ function PageHeader({setSidebar, sidebar, setShowDeleteModal,markdownTitle, save
             <div className='flex justify-between w-full'>
             <div className='flex flex-4 mx-8 items-center gap-4'>
                 <div>
-                    <img src={paperIcon} className="w-4" alt="document icon"></img>
+                    <img src={paperIcon} className="min-w-[20px]" alt="document icon"></img>
                 </div>
                 <p className='text-white'>{markdownTitle}</p>
             </div>
