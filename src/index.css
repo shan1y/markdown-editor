@@ -100,26 +100,26 @@ body {
 
 .open{
     transform: translateX(0);
-    transition: all 1s; 
+    transition: all 0.3s; 
     @apply h-screen min-w-['250px']
 }
 
 .close {
     transform: translateX(-250px);
-    transition: all 1s;
+    transition: all 0.3s;
     @apply h-screen fixed
 }
 
 .open-right{
     transform: translateX(250px);
-    transition:all 1s;
+    transition:all 0.3s;
     width:calc(100% - 250px);
     @apply fixed 
 }
 
 .close-right {
     transform:translateX(0);
-    transition:all 1s;
+    transition:all 0.3s;
    @apply w-full
 }
 

@@ -27,11 +27,11 @@ return(
                 <button onClick={()=>{setShowCreateModal(true)}}className='bg-orange text-white border-none rounded py-1.5 px-9'>+ New Document</button>
                 <div className='mt-6'>
                 {data && data.map((item:any,index:number) => {
-                    return <div key={index} onClick={()=>{setSelectedDoc(item.name)}} className='flex mb-6 items-center cursor-pointer gap-2'>
+                    return <div key={index} onClick={()=>{setSelectedDoc(item.name)}} className=' flex mb-6 items-center cursor-pointer gap-2'>
                         <img className="w-5 h-full"src={paper} alt="document icon"></img>
                      <div className=''>
                         <p className='text-icon-grey'>{moment(item.createdAt).format("ll")}</p>
-                        <p className='text-white text-sm'>{item.name}</p>
+                        <p className='hover:text-orange text-white transition text-sm'>{item.name}</p>
                     </div>
                     </div>
                 })}  

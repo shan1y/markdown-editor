@@ -26,7 +26,7 @@ function PageHeader({setSidebar, sidebar, setShowDeleteModal,markdownTitle, save
                 <div>
                     <img src={paperIcon} className="min-w-[20px]" alt="document icon"></img>
                 </div>
-                <p className='text-white'>{markdownTitle}</p>
+                <p className=' text-white '>{markdownTitle}</p>
             </div>
             <div className='flex gap-2'>
             <button>
