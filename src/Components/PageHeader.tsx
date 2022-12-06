@@ -22,17 +22,17 @@ function PageHeader({setSidebar, sidebar, setShowDeleteModal,markdownTitle, save
                {!sidebar ?<img src={menuIcon} alt="menu icon"></img>: <img src={closeMenuIcon} className="min-w-[30px] p-2" alt="close menu icon"></img> } 
             </div>
             <div className='flex justify-between w-full'>
-            <div className='flex flex-4 mx-8 items-center gap-4'>
+            <div className='flex flex-4 mx-4 items-center gap-4'>
                 <div>
                     <img src={paperIcon} className="min-w-[20px]" alt="document icon"></img>
                 </div>
                 <p className='text-white'>{markdownTitle}</p>
             </div>
-            <div className='flex gap-4'>
+            <div className='flex gap-2'>
             <button>
-                <img onClick={()=>{setShowDeleteModal(true)}}src={deleteIcon} alt="trash icon" />
+                <img onClick={()=>{setShowDeleteModal(true)}}src={deleteIcon} alt="trash icon" className="min-w-[16px] w-[16px]"/>
             </button>
-            <button onClick={()=>{saveChanges()}} className='bg-orange flex justify-center items-center w-40 h-40 rounded-md'>
+            <button onClick={()=>{saveChanges()}} className='bg-orange flex justify-center items-center w-40 h-40 min-w-[14px] rounded-md'>
                 <img src={saveIcon} alt="save button" />
             </button>
             </div>
