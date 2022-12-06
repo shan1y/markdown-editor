@@ -10,9 +10,8 @@ function App() {
   const setDocuments = useDocumentStore((state:any) => state.setDocuments)
  
  useEffect(()=>{
-  console.log("triggered")
-  if((JSON.parse((localStorage.getItem("documents") || "")).state.documents.length===0)|| JSON.parse((localStorage.getItem("documents") || "")).state.documents === null) {
-     setDocuments(data)}
+  if((!JSON.parse((localStorage.getItem("documents") || "")).state.documents)){
+    setDocuments(data)}
  },[setDocuments])
 
 
