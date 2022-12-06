@@ -56,7 +56,7 @@ function Main() {
       {showCreateModal && <CreateModal  setShowCreateModal={setShowCreateModal} />}
       <div className='flex relative bg-dark-bkg'>
         <Side setSelectedDoc={setSelectedDoc} sidebar={sidebar} setShowCreateModal={setShowCreateModal}/>
-        <div className={sidebar ? 'open-right' : 'close-right'} >
+        <div className={sidebar ? 'open-right--main' : 'close-right--main'} >
           <PageHeader setShowDeleteModal={setShowDeleteModal} setSidebar={setSidebar} sidebar={sidebar} saveChanges={saveChanges} markdownTitle={markdownTitle}/>
           <Preview setShowMarkdown={setShowMarkdown} showMarkdown={showMarkdown} />
           {showMarkdown && <textarea onClick={()=>{setSidebar(false)}} className="p-4 h-screen border-none dark:bg-dark-bkg bg-white dark:text-white w-full outline-0 outline-0" value={markdown} onChange={(e) => { handleMarkdownChange(e) }}></textarea>}
