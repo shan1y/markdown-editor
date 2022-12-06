@@ -59,8 +59,8 @@ function Main() {
         <div className={sidebar ? 'open-right' : 'close-right'} >
           <PageHeader setShowDeleteModal={setShowDeleteModal} setSidebar={setSidebar} sidebar={sidebar} saveChanges={saveChanges} markdownTitle={markdownTitle}/>
           <Preview setShowMarkdown={setShowMarkdown} showMarkdown={showMarkdown} />
-          {showMarkdown && <textarea className="p-4 h-screen dark:bg-dark-bkg dark:text-white w-full outline-0" value={markdown} onChange={(e) => { handleMarkdownChange(e) }}></textarea>}
-          {!showMarkdown && < ReactMarkdown className='preview dark:bg-dark-bkg  px-4'>{markdown}</ReactMarkdown>}
+          {showMarkdown && <textarea className="p-4 h-screen dark:bg-dark-bkg bg-white dark:text-white w-full outline-0" value={markdown} onChange={(e) => { handleMarkdownChange(e) }}></textarea>}
+          {!showMarkdown && < ReactMarkdown className='pt-2 preview dark:bg-dark-bkg bg-white h-screen px-4'>{markdown}</ReactMarkdown>}
         </div>
       </div>
     </>
