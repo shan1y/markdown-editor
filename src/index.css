@@ -120,12 +120,14 @@ body {
 .open-right--main {
     transform: translateX(250px);
     width:calc(100% - 250px);
+    transition: 0.3s;
     @apply fixed ;
 }
 
 .close-right--main {
     transform:translateX(0);
     width:100%;
+    transition:all 0.3s
 }
 
 
