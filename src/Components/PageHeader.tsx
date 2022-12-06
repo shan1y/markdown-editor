@@ -14,10 +14,11 @@ interface Props {
 }
 
 function PageHeader({setSidebar, sidebar, setShowDeleteModal,markdownTitle, saveChanges}:Props) {
+    
     return (
 
         <header className='bg-header-bkg flex items-center pr-3'>
-            <div onClick={() => { setSidebar(!sidebar)}} className='flex cursor-pointer h-72 w-72 justify-center bg-hamburger-bkg items-center'>
+            <div onClick={() => { setSidebar(!sidebar)}} className='flex cursor-pointer h-72 min-w-[72px] justify-center bg-hamburger-bkg items-center'>
                {!sidebar ?<img src={menuIcon} alt="menu icon"></img>: <img src={closeMenuIcon} className="min-w-[30px] p-2" alt="close menu icon"></img> } 
             </div>
             <div className='flex justify-between w-full'>

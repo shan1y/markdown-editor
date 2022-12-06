@@ -8,11 +8,14 @@ import data from '../src/assets/data/data.json'
 function App() {
   const theme = useThemeStore((state:any) => state.theme);
   const setDocuments = useDocumentStore((state:any) => state.setDocuments)
+  const setDocumentTitle = useDocumentStore((state:any) => state.setDocumentTitle)
  
  useEffect(()=>{
+  console.log("triggered")
   if((!JSON.parse((localStorage.getItem("documents") || "")).state.documents)){
     setDocuments(data)}
- },[setDocuments])
+    setDocumentTitle(data[1].name)
+ },[setDocuments, setDocumentTitle])
 
 
   useEffect(() => {

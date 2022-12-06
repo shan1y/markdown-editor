@@ -46,8 +46,6 @@ return(
                 <img onClick={setLightTheme} className=' dark:contrast-0 dark:invert-0  cursor-pointer contrast-200 invert' src={sun} alt="light mode icon"></img>
             </div>
 
-            
-
         </section>
 
     )
