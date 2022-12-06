@@ -32,9 +32,12 @@ function PageHeader({setSidebar, sidebar, setShowDeleteModal,markdownTitle, save
             <button>
                 <img onClick={()=>{setShowDeleteModal(true)}}src={deleteIcon} alt="trash icon" className="min-w-[16px] w-[16px]"/>
             </button>
-            <button onClick={()=>{saveChanges()}} className='bg-orange flex justify-center items-center text-white h-8 px-4 min-w-[14px] rounded-md'>
+            {window.innerWidth > 500 ?  <button onClick={()=>{saveChanges()}} className='bg-orange flex justify-center items-center text-white h-8 px-4 min-w-[14px] rounded-md'>
                 <img src={saveIcon} className="mr-2"alt="save button" /> Save Changes
-            </button>
+            </button> :  <button onClick={()=>{saveChanges()}} className='bg-orange flex justify-center items-center text-white h-8 px-4 min-w-[14px] rounded-md'>
+                <img src={saveIcon}alt="save button" />
+            </button> }
+         
             </div>
             </div>
           
