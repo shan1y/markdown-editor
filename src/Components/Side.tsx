@@ -1,6 +1,6 @@
 
-import sun from "../assets/icon-light-mode.svg"
-import moon from "../assets/icon-dark-mode.svg"
+import {ReactComponent as Sun} from "../assets/icon-light-mode.svg"
+import {ReactComponent as Moon}from "../assets/icon-dark-mode.svg"
 import paper from '../assets/icon-document.svg'
 import moment from 'moment'
 import useThemeStore from "../stores/useThemeStore";
@@ -38,12 +38,13 @@ return(
                 </div>
             </div>
           
-            <div className='flex items-center gap-2'>
-                <img className='dark:invert dark:contrast-200 cursor-pointer'  onClick={setDarkTheme} src={moon} alt="dark mode icon"></img>
+            <div className='flex items-center mb-8 gap-2'>
+                <Moon onClick={setDarkTheme} className="moon"/>
+                {/* <img className='dark:fill-white cursor-pointer'  onClick={setDarkTheme} src={moon} alt="dark mode icon"></img> */}
                 <div className='bg-slider-grey w-14 h-6 rounded-xl flex items-center  transition-all '>
                     <div onClick={toggleTheme} className='bg-white cursor-pointer rounded-full w-4 h-4 m-1 translate-x-8 dark:translate-x-0 transition-all'></div>
                 </div>
-                <img onClick={setLightTheme} className=' dark:contrast-0 dark:invert-0  cursor-pointer contrast-200 invert' src={sun} alt="light mode icon"></img>
+                <Sun onClick={setLightTheme} className='sun'/>
             </div>
 
         </section>

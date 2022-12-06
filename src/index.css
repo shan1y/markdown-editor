@@ -155,3 +155,11 @@ body {
     background-color: rgba(0,0,0,75%);
     z-index: 99;
     @apply fixed top-0 bottom-0 left-0 right-0 }
+
+.moon path {
+        @apply dark:fill-white 
+    }
+
+    .sun path {
+        @apply fill-white dark:fill-[#5A6069]
+    }

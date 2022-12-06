@@ -1,6 +1,6 @@
 import React from 'react'
-import eye from '../assets/icon-show-preview.svg'
-import closedEye from '../assets/icon-hide-preview.svg'
+import {ReactComponent as Eye }from '../assets/icon-show-preview.svg'
+import {ReactComponent as ClosedEye} from '../assets/icon-hide-preview.svg'
 
 interface Props {
   showMarkdown:boolean;
@@ -11,7 +11,7 @@ function Preview({showMarkdown, setShowMarkdown}:Props) {
   return (
     <section className='bg-grey-0 dark:bg-side-bkg  h-42 flex p-4 justify-between items-center "w-full" '>
         {showMarkdown? <h2 className='uppercase text-icon-grey dark:text-grey-2'>Markdown</h2> : <h2 className='uppercase text-icon-grey dark:text-grey-2'>Preview</h2> }
-        {showMarkdown ? <img onClick={()=>{setShowMarkdown(false)}}src={closedEye} className="dark:contrast-200 dark:invert cursor-pointer" alt="preview icon"></img> : <img className="dark:contrast-200 dark:invert cursor-pointer" onClick={()=>{setShowMarkdown(true)}}src={eye} alt="hide preview icon" /> }
+        {showMarkdown ? <ClosedEye onClick={()=>{setShowMarkdown(false)}} className=" cursor-pointer"/> : <Eye className=" cursor-pointer" onClick={()=>{setShowMarkdown(true)}} /> }
     </section>
   )
 }
