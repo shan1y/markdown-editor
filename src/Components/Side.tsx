@@ -4,6 +4,7 @@ import moon from "../assets/icon-dark-mode.svg"
 import paper from '../assets/icon-document.svg'
 import moment from 'moment'
 import useThemeStore from "../stores/useThemeStore";
+import useDocumentStore from "../stores/useDocumentStore"
 
 type Props = {
     sidebar:boolean
@@ -12,7 +13,8 @@ type Props = {
 }
 
 function Side({sidebar, setShowCreateModal,setSelectedDoc}:Props) {
-const data = JSON.parse(JSON.parse(localStorage.getItem('documents')|| '').state.documents)
+    let data = []
+     data = useDocumentStore((state:any) => state.documents);
     const toggleTheme = useThemeStore((state:any) => state.toggleTheme);
     const setLightTheme = useThemeStore((state:any) => state.setLightTheme);
     const setDarkTheme = useThemeStore((state:any) => state.setDarkTheme);
@@ -24,8 +26,8 @@ return(
                 <p className='uppercase text-icon-grey my-27 '>My Documents</p>
                 <button onClick={()=>{setShowCreateModal(true)}}className='bg-orange text-white border-none rounded py-1.5 px-9'>+ New Document</button>
                 <div className='mt-6'>
-                {data && data.map((item:any) => {
-                    return <div onClick={()=>{setSelectedDoc(item.name)}} className='flex mb-6 items-center gap-2'>
+                {data && data.map((item:any,index:number) => {
+                    return <div key={index} onClick={()=>{setSelectedDoc(item.name)}} className='flex mb-6 items-center cursor-pointer gap-2'>
                         <img className="w-5 h-full"src={paper} alt="document icon"></img>
                      <div className=''>
                         <p className='text-icon-grey'>{moment(item.createdAt).format("ll")}</p>

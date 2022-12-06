@@ -9,14 +9,12 @@ function App() {
   const theme = useThemeStore((state:any) => state.theme);
   const setDocuments = useDocumentStore((state:any) => state.setDocuments)
  
-//  useEffect(()=>{
-//   if(localStorage.getItem("documents")){
-//     const documents =localStorage.getItem('documents')
-//     setDocuments(documents)
-//   } else {
-//     setDocuments(JSON.stringify(data))
-//    }
-//  },[])
+ useEffect(()=>{
+  console.log("triggered")
+  if(JSON.parse((localStorage.getItem("documents") || "")).state.documents.length===0) {
+     setDocuments(data)}
+ },[setDocuments])
+
 
   useEffect(() => {
     applyThemePreference(theme);

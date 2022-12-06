@@ -9,9 +9,11 @@ interface Props {
     setSidebar:Function
     sidebar:boolean
     setShowDeleteModal:Function
+    markdownTitle:string
+    saveChanges:Function
 }
 
-function PageHeader({setSidebar, sidebar, setShowDeleteModal}:Props) {
+function PageHeader({setSidebar, sidebar, setShowDeleteModal,markdownTitle, saveChanges}:Props) {
     return (
 
         <header className='bg-header-bkg flex items-center pr-3'>
@@ -23,13 +25,13 @@ function PageHeader({setSidebar, sidebar, setShowDeleteModal}:Props) {
                 <div>
                     <img src={paperIcon} className="w-4" alt="document icon"></img>
                 </div>
-                <p className='text-white'>welcome.md</p>
+                <p className='text-white'>{markdownTitle}</p>
             </div>
             <div className='flex gap-4'>
             <button>
                 <img onClick={()=>{setShowDeleteModal(true)}}src={deleteIcon} alt="trash icon" />
             </button>
-            <button className='bg-orange flex justify-center items-center w-40 h-40 rounded-md'>
+            <button onClick={()=>{saveChanges()}} className='bg-orange flex justify-center items-center w-40 h-40 rounded-md'>
                 <img src={saveIcon} alt="save button" />
             </button>
             </div>
