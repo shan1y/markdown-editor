@@ -11,7 +11,9 @@ const DocumentStore =
       (set:any) => ({
       documents: null,
       documentTitle:"",
+      markdownContent:"",
        setDocuments: (input:string) => {set((state:any)=>({documents:input}))},
+       setMarkdownContent:(input:string) => {set((state:any)=>({markdownContent:input}))},
        setDocumentTitle:(input:string) =>{set((state:any)=>({documentTitle:input}))},
        addDocument:(input:any) => set((state:any) => ({documents:[...state.documents, input]})),
        saveDocument:(input:any, documents:any) => {

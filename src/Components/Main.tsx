@@ -16,10 +16,11 @@ type Data = {
 
 function Main() {
  const  docs = useDocumentStore((state:any) => state.documents);
+ const setMarkdownContent = useDocumentStore((state:any) => state.setMarkdownContent);
  const saveDocument = useDocumentStore((state)=>state.saveDocument)
  const setDocumentTitle = useDocumentStore((state)=>state.setDocumentTitle)
  const markdownTitle = useDocumentStore((state:any)=>state.documentTitle)
-  const [markdown, setMarkdown] = useState<string>("")
+const markdownContent = useDocumentStore((state:any) => state.markdownContent)
   const [showMarkdown, setShowMarkdown] = useState(true)
   const [sidebar, setSidebar] = useState(false)
   const [showCreateModal, setShowCreateModal] = useState(false)
@@ -28,7 +29,7 @@ function Main() {
 
  
   const handleMarkdownChange = (e: React.FormEvent) => {
-     setMarkdown((e.target as HTMLFormElement).value)
+     setMarkdownContent((e.target as HTMLFormElement).value)
   }
 
   const setSelectedDoc = (title: string) => {
@@ -37,7 +38,7 @@ function Main() {
     })
     if(selectedDoc){
     setDocumentTitle(selectedDoc.name)
-     setMarkdown(selectedDoc.content)}
+     setMarkdownContent(selectedDoc.content)}
   }
 
 
@@ -45,7 +46,7 @@ function Main() {
     const selectedDoc = docs.find((item:Data)=>{
       return markdownTitle === item.name
     })
-    selectedDoc.content = markdown
+    selectedDoc.content = markdownContent
     saveDocument(selectedDoc, docs)
   }
  
@@ -59,8 +60,10 @@ function Main() {
         <div className={sidebar ? 'open-right--main' : 'close-right--main'} >
           <PageHeader setShowDeleteModal={setShowDeleteModal} setSidebar={setSidebar} sidebar={sidebar} saveChanges={saveChanges} markdownTitle={markdownTitle}/>
           <Preview setShowMarkdown={setShowMarkdown} showMarkdown={showMarkdown} />
-          {showMarkdown && <textarea onClick={()=>{setSidebar(false)}} className="p-4 h-screen border-none dark:bg-dark-bkg bg-white dark:text-white w-full outline-0 outline-0" value={markdown} onChange={(e) => { handleMarkdownChange(e) }}></textarea>}
-          {!showMarkdown && < ReactMarkdown className='pt-2 preview dark:bg-dark-bkg bg-white h-screen px-4'>{markdown}</ReactMarkdown>}
+        <div onClick={()=>{setSidebar(false)}}  className='flex justify-center'>
+          {showMarkdown && <textarea onClick={()=>{setSidebar(false)}} className="lg:w-3/4 p-4 h-screen border-none dark:bg-dark-bkg bg-white dark:text-white w-full outline-0 outline-0" value={markdownContent} onChange={(e) => { handleMarkdownChange(e) }}></textarea>}
+          {!showMarkdown && < ReactMarkdown className='lg:w-3/4 pt-2 preview dark:bg-dark-bkg bg-white h-screen px-4'>{markdownContent}</ReactMarkdown>}
+          </div>
         </div>
       </div>
     </>

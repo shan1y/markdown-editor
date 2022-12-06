@@ -9,12 +9,14 @@ function App() {
   const theme = useThemeStore((state:any) => state.theme);
   const setDocuments = useDocumentStore((state:any) => state.setDocuments)
   const setDocumentTitle = useDocumentStore((state:any) => state.setDocumentTitle)
+  const setMarkdownContent = useDocumentStore((state:any) => state.setMarkdownContent);
  
  useEffect(()=>{
   console.log("triggered")
   if((!JSON.parse((localStorage.getItem("documents") || "")).state.documents)){
-    setDocuments(data)}
+    setDocuments(data)
     setDocumentTitle(data[1].name)
+    setMarkdownContent(data[1].content)} 
  },[setDocuments, setDocumentTitle])
 
 
