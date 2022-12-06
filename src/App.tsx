@@ -11,7 +11,7 @@ function App() {
  
  useEffect(()=>{
   console.log("triggered")
-  if(JSON.parse((localStorage.getItem("documents") || "")).state.documents.length===0) {
+  if((JSON.parse((localStorage.getItem("documents") || "")).state.documents.length===0)|| JSON.parse((localStorage.getItem("documents") || "")).state.documents === null) {
      setDocuments(data)}
  },[setDocuments])
 
