@@ -10,15 +10,14 @@ interface Document {
   content: string
 }
 
-type initialState = {
+type DocumentStoreState = {
   documents: Document[],
   documentTitle: string,
   markdownContent: string,
-
 }
 
-type SetState = {
-  setDocuments: (input: string) => void
+type DocumentFunctions = {
+  setDocuments: (input: string) => Document[]
   setMarkdownContent: (input: string) => void
   setDocumentTitle: (input: string) => void
   addDocument: (input: string) => void

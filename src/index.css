@@ -12,7 +12,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  @apply dark:bg-dark-bg bg-white;
+  @apply dark:bg-dark-bkg bg-white;
 }
 
 .preview {
