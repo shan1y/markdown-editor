@@ -12,6 +12,12 @@ type Props = {
     setSelectedDoc: Function
 }
 
+interface Document {
+    createdAt: string
+    name: string
+    content: string
+}
+
 function Side({ sidebar, setShowCreateModal, setSelectedDoc }: Props) {
     let data = []
     data = useDocumentStore((state: any) => state.documents);
@@ -26,7 +32,7 @@ function Side({ sidebar, setShowCreateModal, setSelectedDoc }: Props) {
                 <p className='uppercase text-icon-grey my-27 '>My Documents</p>
                 <button onClick={() => { setShowCreateModal(true) }} className='bg-orange text-white border-none rounded py-1.5 px-9'>+ New Document</button>
                 <div className='mt-6'>
-                    {data && data.map((item: any, index: number) => {
+                    {data && data.map((item: Document, index: number) => {
                         return <div key={index} onClick={() => { setSelectedDoc(item.name) }} className=' flex mb-6 items-center cursor-pointer gap-2'>
                             <img className="w-5 h-full" src={paper} alt="document icon"></img>
                             <div className=''>
