@@ -83,7 +83,7 @@ function Main() {
               </div>)}
             <div className={isHidden ? `w-full` : `sec-grow`}>
               <Preview isHidden={isHidden} single={true} setIsHidden={setIsHidden} isDesktop={isDesktop} isLeft={false} setShowMarkdown={setShowMarkdown} showMarkdown={showMarkdown} />
-              <ReactMarkdown className='lg:w-3/4 pt-2 preview dark:bg-dark-bkg bg-white h-screen px-4'>{markdownContent}</ReactMarkdown>
+              <ReactMarkdown className='lg:w-3/4 h-full pt-2 preview dark:bg-dark-bkg bg-white h-screen px-4'>{markdownContent}</ReactMarkdown>
             </div>
           </div>}
           {!isDesktop &&
