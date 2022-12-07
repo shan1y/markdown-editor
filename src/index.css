@@ -163,3 +163,10 @@ body {
     .sun path {
         @apply fill-white dark:fill-[#5A6069]
     }
+
+    .sec-grow {
+        flex:0.5
+    }
+
+    .moon, .sun {cursor: pointer;}
+    
