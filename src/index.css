@@ -2,171 +2,172 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-    font-family: "Roboto",sans-serif;
+  font-family: 'Roboto', sans-serif;
+  @apply dark:bg-dark-bg bg-white;
 }
 
 .preview {
-    font-family:"Roboto Slab",serif;
+  font-family: 'Roboto Slab', serif;
 }
 
-.preview h1{
-    font-size:32px;
-    line-height:42px;
-    @apply dark:text-white
+.preview h1 {
+  font-size: 32px;
+  line-height: 42px;
+  @apply dark:text-white;
 }
 
-.preview h2{
-     font-size: 28px;
-    line-height: 37px;
-    @apply dark:text-white
+.preview h2 {
+  font-size: 28px;
+  line-height: 37px;
+  @apply dark:text-white;
 }
 
-.preview h3{
-    font-size:24px;
-    @apply font-bold dark:text-white
+.preview h3 {
+  font-size: 24px;
+  @apply font-bold dark:text-white;
 }
 
 .preview h4 {
-    font-size:20px;
-    @apply font-bold dark:text-white
+  font-size: 20px;
+  @apply font-bold dark:text-white;
 }
 
 .preview h5 {
-    font-size:16px;
-    @apply font-bold my-20 dark:text-white
+  font-size: 16px;
+  @apply font-bold my-20 dark:text-white;
 }
 
 .preview h6 {
-    font-size: 14px;
-    @apply text-orange font-bold my-20
+  font-size: 14px;
+  @apply text-orange font-bold my-20;
 }
 
 .preview ol {
-    @apply list-decimal px-4 text-sm font-normal  mb-5 ;
-  }
-
+  @apply list-decimal px-4 text-sm font-normal  mb-5;
+}
 
 .preview pre {
-    @apply p-24
+  @apply p-24;
 }
 .preview ul {
-    @apply px-4 text-sm font-normal mb-5 ;
-  }
+  @apply px-4 text-sm font-normal mb-5;
+}
 
-  .preview ul li, .preview ol li{
-    @apply text-icon-grey dark:text-grey-2
-  }
+.preview ul li,
+.preview ol li {
+  @apply text-icon-grey dark:text-grey-2;
+}
 
 .preview ul li::before {
-    content: "\2022";
-  @apply inline-block w-4 text-orange -ml-4 font-bold 
-  }
-  
+  content: '\2022';
+  @apply inline-block w-4 text-orange -ml-4 font-bold;
+}
 
-.preview p{
-    @apply block my-2 text-icon-grey dark:text-grey-2
+.preview p {
+  @apply block my-2 text-icon-grey dark:text-grey-2;
 }
 
 .preview p code {
-    @apply  inline text-hamburger-bkg dark:text-white
+  @apply inline text-hamburger-bkg dark:text-white;
 }
 
 .preview pre {
-    @apply bg-grey-0 dark:bg-dark-blockquote
+  @apply bg-grey-0 dark:bg-dark-blockquote;
 }
 
 .preview pre code {
-    @apply text-xs  dark:text-white
+  @apply text-xs  dark:text-white;
 }
 
 .preview blockquote {
-    border-left:4px solid #e46643;
-    @apply bg-grey-0 my-20 p-24  dark:bg-dark-blockquote
+  border-left: 4px solid #e46643;
+  @apply bg-grey-0 my-20 p-24  dark:bg-dark-blockquote;
 }
 
 .preview blockquote p {
-    @apply text-hamburger-bkg dark:text-white 
+  @apply text-hamburger-bkg dark:text-white;
 }
 
-.open{
-    transform: translateX(0);
-    transition: transform 0.3s; 
-    @apply h-screen min-w-['250px']
+.open {
+  transform: translateX(0);
+  transition: transform 0.3s;
+  @apply h-screen min-w-['250px'];
 }
 
 .close {
-    transform: translateX(-250px);
-    transition: transform 0.3s;
-    @apply h-screen fixed
+  transform: translateX(-250px);
+  transition: transform 0.3s;
+  @apply h-screen fixed;
 }
 
-.open-right{
-    transform: translateX(250px);
-    transition:transform 0.3s;
-    width:calc(100% - 250px);
-    @apply fixed 
+.open-right {
+  transform: translateX(250px);
+  transition: transform 0.3s;
+  width: calc(100% - 250px);
+  @apply fixed;
 }
 
 .open-right--main {
-    transform: translateX(250px);
-   width:100%;
-    transition:transform  0.3s;
-    @apply fixed ;
+  transform: translateX(250px);
+  width: 100%;
+  transition: transform 0.3s;
+  @apply fixed;
 }
 
 .close-right--main {
-    transform:translateX(0);
-    width:100%;
-    transition:transform 0.3s
+  transform: translateX(0);
+  width: 100%;
+  transition: transform 0.3s;
 }
 
-
 .close-right {
-    transform:translateX(0);
-    transition:transform 0.3s;
-   @apply w-full
+  transform: translateX(0);
+  transition: transform 0.3s;
+  @apply w-full;
 }
 
 .center-modal {
-    transform:translate(calc(-50% + 250px), -50%);
-    position:fixed;
-    z-index: 1000;
-    @apply top-1/2 right-1/2
+  transform: translate(calc(-50% + 250px), -50%);
+  position: fixed;
+  z-index: 1000;
+  @apply top-1/2 right-1/2;
 }
 
 .center-modal-delete {
-    transform:translate(50%, -50%);
-    position:fixed;
-    z-index: 1000;
-    @apply top-1/2 right-1/2
+  transform: translate(50%, -50%);
+  position: fixed;
+  z-index: 1000;
+  @apply top-1/2 right-1/2;
 }
 
 .overlay {
-    background-color: rgba(0,0,0,75%);
-    z-index: 99;
-    @apply fixed top-0 bottom-0 left-0 right-0 }
+  background-color: rgba(0, 0, 0, 75%);
+  z-index: 99;
+  @apply fixed top-0 bottom-0 left-0 right-0;
+}
 
 .moon path {
-        @apply dark:fill-white 
-    }
+  @apply dark:fill-white;
+}
 
-    .sun path {
-        @apply fill-white dark:fill-[#5A6069]
-    }
+.sun path {
+  @apply fill-white dark:fill-[#5A6069];
+}
 
-    .sec-grow {
-        flex:0.5
-    }
+.sec-grow {
+  flex: 0.5;
+}
 
-    .moon, .sun {cursor: pointer;}
-    
+.moon,
+.sun {
+  cursor: pointer;
+}
