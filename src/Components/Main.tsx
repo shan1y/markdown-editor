@@ -83,14 +83,14 @@ function Main() {
               </div>)}
             <div className={isHidden ? `w-full` : `sec-grow`}>
               <Preview isHidden={isHidden} single={true} setIsHidden={setIsHidden} isDesktop={isDesktop} isLeft={false} setShowMarkdown={setShowMarkdown} showMarkdown={showMarkdown} />
-              <ReactMarkdown className='lg:w-3/4 h-full pt-2 preview dark:bg-dark-bkg bg-white px-4'>{markdownContent}</ReactMarkdown>
+              <ReactMarkdown className='lg:w-3/4 h-auto py-2 preview dark:bg-dark-bkg bg-white px-4'>{markdownContent}</ReactMarkdown>
             </div>
           </div>}
           {!isDesktop &&
             (<div><Preview isHidden={false} setIsHidden={setIsHidden} single={true} isDesktop={false} isLeft={false} setShowMarkdown={setShowMarkdown} showMarkdown={showMarkdown} />
               <div onClick={() => { setSidebar(false) }} className='flex justify-center'>
                 {showMarkdown && <textarea onClick={() => { setSidebar(false) }} className="lg:w-3/4 h-full p-4 h-screen border-none dark:bg-dark-bkg bg-white dark:text-white w-full outline-0 outline-0" value={markdownContent} onChange={(e) => { handleMarkdownChange(e) }}></textarea>}
-                {!showMarkdown && < ReactMarkdown className='lg:w-3/4 h-full pt-2 preview dark:bg-dark-bkg bg-white  px-4'>{markdownContent}</ReactMarkdown>}
+                {!showMarkdown && < ReactMarkdown className='lg:w-3/4 h-auto py-2 preview dark:bg-dark-bkg bg-white  px-4'>{markdownContent}</ReactMarkdown>}
               </div></div>)}
 
 
