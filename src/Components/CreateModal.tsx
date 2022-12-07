@@ -1,5 +1,6 @@
 import React from 'react'
 import useDocumentStore from "../stores/useDocumentStore"
+import Swal from 'sweetalert2'
 type Props ={
 setShowCreateModal:Function
 }
@@ -19,8 +20,13 @@ function CreateModal({setShowCreateModal}:Props) {
           "name": `${title}.md`,
           "content": ""
       }
-      console.log(newDoc)
       addDocument(newDoc)
+      Swal.fire({
+        icon: 'success',
+        title: 'Your document has been created',
+        showConfirmButton: false,
+        timer: 1500
+      })
       setShowCreateModal(false)
     }
 

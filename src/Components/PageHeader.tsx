@@ -36,8 +36,7 @@ function PageHeader({setSidebar, sidebar, setShowDeleteModal,markdownTitle, save
                 <img src={saveIcon} className="mr-2"alt="save button" /> Save Changes
             </button> :  <button onClick={()=>{saveChanges()}} className='bg-orange flex justify-center items-center text-white h-8 px-4 min-w-[14px] rounded-md'>
                 <img src={saveIcon}alt="save button" />
-            </button> }
-         
+            </button>}
             </div>
             </div>
           

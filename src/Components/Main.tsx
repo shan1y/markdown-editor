@@ -6,6 +6,7 @@ import Side from './Side'
 import CreateModal from './CreateModal'
 import DeleteModal from './DeleteModal'
 import useDocumentStore from "../stores/useDocumentStore";
+import Swal from "sweetalert2"
 
 type Data = {
   createdAt: string,
@@ -48,6 +49,12 @@ const markdownContent = useDocumentStore((state:any) => state.markdownContent)
     })
     selectedDoc.content = markdownContent
     saveDocument(selectedDoc, docs)
+    Swal.fire({
+      icon: 'success',
+      title: 'Changes have been saved',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
  
 

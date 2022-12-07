@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import create from 'zustand'
+import Swal from "sweetalert2"
 import {devtools, persist } from 'zustand/middleware'
 
 interface DocumentState {
@@ -28,12 +29,16 @@ const DocumentStore =
         return obj.name !== input
        })
        set((state:any)=>({documents:filteredDocuments}))
+       Swal.fire({
+        icon: 'success',
+        title: 'Document successfully deleted',
+        showConfirmButton: false,
+        timer: 1500
+      })
        }
-      
       });
     
-  
-  
+
 const useDocumentStore = create(devtools(persist(DocumentStore,{name:"documents"})))
 
 

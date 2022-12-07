@@ -12,7 +12,6 @@ function App() {
   const setMarkdownContent = useDocumentStore((state:any) => state.setMarkdownContent);
  
  useEffect(()=>{
-  console.log("triggered")
   if((!JSON.parse((localStorage.getItem("documents") || "")).state.documents)){
     setDocuments(data)
     setDocumentTitle(data[1].name)
