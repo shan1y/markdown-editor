@@ -5,38 +5,29 @@ import { devtools, persist } from 'zustand/middleware'
 
 
 interface Document {
-  createdAt: string
+  createdAt:number
   name: string
   content: string
 }
 
-type DocumentStoreState = {
-  documents: Document[],
-  documentTitle: string,
-  markdownContent: string,
-}
-
-type DocumentFunctions = {
-  setDocuments: (input: string) => Document[]
-  setMarkdownContent: (input: string) => void
-  setDocumentTitle: (input: string) => void
-  addDocument: (input: string) => void
-  saveDocument: (input: string, documents: Document[]) => void
-  deleteDocument: (input: string, documents: Document[]) => void
+interface State {
+  documents: Document[];
+  documentTitle: string;
+  markdownContent: string;
 }
 
 const DocumentStore =
-  (set: any) => ({
+  (set: Function) => ({
     documents: null,
     documentTitle: "",
     markdownContent: "",
     setDocuments: (input: string) => { set(() => ({ documents: input })) },
     setMarkdownContent: (input: string) => { set(() => ({ markdownContent: input })) },
     setDocumentTitle: (input: string) => { set(() => ({ documentTitle: input })) },
-    addDocument: (input: any) => set((state: any) => ({ documents: [...state.documents, input] })),
-    saveDocument: (input: any, documents: Document[]) => {
+    addDocument: (input: Document) => set((state: State) => ({ documents: [...state.documents, input] })),
+    saveDocument: (input: Document, documents: Document[]) => {
       const objIndex = documents.findIndex((obj) => {
-        return obj.name === input.title
+        return obj.name === input.name
       })
       documents[objIndex] = input
       set(() => ({ documents: documents }))
@@ -60,3 +51,18 @@ const useDocumentStore = create(devtools(persist(DocumentStore, { name: "documen
 
 
 export default useDocumentStore;
+
+//type DocumentStoreState = {
+//   documents: Document[],
+//   documentTitle: string,
+//   markdownContent: string,
+// }
+
+// type DocumentFunctions = {
+//   setDocuments: (input: string) => Document[]
+//   setMarkdownContent: (input: string) => void
+//   setDocumentTitle: (input: string) => void
+//   addDocument: (input: string) => void
+//   saveDocument: (input: string, documents: Document[]) => void
+//   deleteDocument: (input: string, documents: Document[]) => void
+// }

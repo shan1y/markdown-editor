@@ -56,6 +56,7 @@ function Main() {
     const selectedDoc = docs.find((item: Data) => {
       return markdownTitle === item.name
     })
+    console.log(selectedDoc)
     selectedDoc.content = markdownContent
     saveDocument(selectedDoc, docs)
     Swal.fire({
